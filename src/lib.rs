@@ -5,7 +5,7 @@ use seed::*;
 struct Model {
     text_to_show: String,
     selected_item: ItemId,
-    pub saved_items: Vec<String> // Vector to hold items.
+    saved_items: Vec<String> // Vector to hold items.
     // index placements will be identifiers for deletion.
     
 }
