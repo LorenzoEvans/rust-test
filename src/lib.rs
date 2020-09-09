@@ -4,7 +4,9 @@ use seed::*;
 #[derive(Default)]
 struct Model {
     text_to_show: String,
-    saved_items: Vec<String>
+    // saved_items: Vec<String> // Vector to hold items.
+                                // index placements will be identifiers for deletion.
+
 }
 
 #[derive(Clone)]
