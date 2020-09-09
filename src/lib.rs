@@ -4,11 +4,18 @@ use seed::*;
 #[derive(Default)]
 struct Model {
     text_to_show: String,
+    saved_items: Vec<String>
 }
 
 #[derive(Clone)]
 enum Msg {
     ChangeText(String),
+    // We need a message to indicate clearing state
+    // Clear,
+    // We need a message to indicate deleting a single item
+    // Delete(i32)
+    // We need a message to indicate saving a single item.
+    // SaveText(String)
 }
 
 fn update(msg: Msg, model: &mut Model, _orders: &mut impl Orders<Msg>) {
@@ -16,6 +23,9 @@ fn update(msg: Msg, model: &mut Model, _orders: &mut impl Orders<Msg>) {
 
     match msg {
         ChangeText(new_text) => model.text_to_show = new_text,
+        // ClearMessages
+        // DeleteItem
+        // SaveItem
     }
 }
 
@@ -27,6 +37,7 @@ fn view(model: &Model) -> Node<Msg> {
                 At::Placeholder => "Enter some text..."
             },
             input_ev(Ev::Input, Msg::ChangeText),
+            // It's likely we can add more html elements here.
         ],
         div![&model.text_to_show]
     ]
@@ -34,6 +45,7 @@ fn view(model: &Model) -> Node<Msg> {
 
 fn init(_: Url, _: &mut impl Orders<Msg>) -> Model {
     Model::default()
+    // This is the function imported as a JS function in the HTML file.
 }
 
 #[wasm_bindgen(start)]
