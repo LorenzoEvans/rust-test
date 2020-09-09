@@ -19,6 +19,7 @@ fn update(msg: Msg, model: &mut Model, _orders: &mut impl Orders<Msg>) {
     }
 }
 
+
 fn view(model: &Model) -> Node<Msg> {
     div![
         input![
